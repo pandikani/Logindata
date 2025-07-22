@@ -18,7 +18,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://loginserver-d9uf.onrender.com/api/login/', formData)
+      await axios.post('https://loginserver-d9uf.onrender.com/api/login/', formData,
+        {
+        withCredentials: true
+      })
       alert("Login info sent to Django!");
     } catch (error) {
       console.error('Error:', error);
